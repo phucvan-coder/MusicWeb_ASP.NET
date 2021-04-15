@@ -1,0 +1,218 @@
+﻿
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Blog</title>
+</head>
+<body>
+    <section class="latest-news-area" id="latest">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="section_title">
+                <h2>Recent <strong>Blog</strong></h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="news-active">
+            <div class="col-md-4">
+                <div class="latest-news-wrap">
+                    <div class="news-img">
+                        <img src="~/Content/Images/Fi.jpg" class="img-responsive" />
+                        <div class="deat">
+                            <span>10</span>
+                            <span>Feb</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-linkedin"></i>
+                        <i class="fa fa-youtube"></i>
+                        <i class="fa fa-whatsapp"></i>
+                        <p><b>Men At Work</b></p>
+                        <p>
+                            Men at Work is an Australian reggae-influenced 
+                            rock band that formed in 1979 in St. Kilda, 
+                            a suburb of Melbourne. Men at Work often used 
+                            woodwind and brass instruments. 
+                            In 1986, they disbanded, but in 1996 they 
+                            reformed and are still playing. 
+                            Their biggest success they had in the 1980s.
+                        </p>
+                        <br />
+                        <a href="">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="latest-news-wrap">
+                    <div class="news-img">
+                        <img src="~/Content/Images/se.jpg" class="img-responsive" />
+                        <div class="deat">
+                            <span>11</span>
+                            <span>Feb</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-linkedin"></i>
+                        <i class="fa fa-youtube"></i>
+                        <i class="fa fa-whatsapp"></i>
+                        <p><b>Let There Be Rock</b></p>
+                        <p>
+                            Let There Be Rock is the fourth studio album
+                            by Australian hard rock band AC/DC. It was
+                            the band's third studio album released
+                            internationally and the fourth to be released
+                            in Australia. It was also the last AC/DC album
+                            to feature Mark Evans on bass. It was originally
+                            released on 21 March 1977 in Australia.
+                        </p>
+                        <br />
+                        <a href="">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="latest-news-wrap">
+                    <div class="news-img">
+                        <img src="~/Content/Images/RingBell.jpg" class="img-responsive" />
+                        <div class="deat">
+                            <span>12</span>
+                            <span>Feb</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-linkedin"></i>
+                        <i class="fa fa-youtube"></i>
+                        <i class="fa fa-whatsapp"></i>
+                        <p><b>Ring My Bell</b></p>
+                        <p>
+                            This disco classic was written by Ward's producer, 
+                            Frederick Knight. He originally intended it for 11-year-old 
+                            Stacy Lattisaw, but when she signed with a different label, 
+                            Ward was asked to sing it instead. 
+                            She disliked the song and only recorded it as Frederick Knight 
+                            insisted they needed another dance number on the album.
+                        </p>
+                        <br />
+                        <a href="">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <style>
+        * {
+            font-family: 'Roboto';
+
+        }
+        p {
+            font-size: 15px;
+        }
+        .latest-news-area {
+            margin-top: 40px;
+        }
+        .latest-news-wrap {
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        .news-img {
+            position: relative;
+        }
+        .news-img:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            content: "";
+            opacity: 0;
+            transform: scale(.8);
+            transition: all 0.5s;
+        }
+        .latest-news-wrap:hover .news-img:before {
+            opacity: .5;
+            transform: scale(1);
+        }
+        .deat {
+            background: #f89406 none repeat scroll 0 0;
+            height: 70px;
+            left: 0;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            width: 70px;
+            padding: 10px;
+        }
+        .deat span {
+            display: block;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .news-content {
+            padding: 20px;
+            margin-left: 3px;
+        }
+        .news-content i {
+            font-size: 18px;
+            display: inline-block;
+        }
+        .news-content .fa {
+            padding: 10px 10px;
+            cursor: pointer;
+        }
+        .news-content .fa-facebook {
+            color: #3b5995;
+        }
+        .news-content .fa-twitter {
+            color: #0084b4;
+        }
+        .news-content .fa-linkedin {
+            color: #0077b5;
+        }
+        .news-content .fa-youtube {
+            color: red;
+        }
+        .news-content .fa-whatsapp {
+            color: #34af23;
+        }
+        .news-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+            margin-top: 20px;
+        }
+        .news-content a {
+            font-size: 14px;
+            background-color: #e0ad23;
+            padding: 10px 20px;
+            color: white;
+            transition: all 0.5s ease-in;
+        }
+        .news-content a:hover {
+            font-size: 14px;
+            border: 1px solid #34495e;
+            border-top-right-radius: 20px;
+            background-color: transparent;
+            color: #34495e;
+            text-decoration: none;
+        }
+    </style>
+</section>
+</body>
+</html>
