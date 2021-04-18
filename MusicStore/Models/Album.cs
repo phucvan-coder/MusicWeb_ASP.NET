@@ -43,6 +43,13 @@ namespace MusicStore.Models
 
         public string AlbumArtUrl { get; set; }
 
+        //record
+        [DisplayName("Album Record URL")]
+
+        [StringLength(1024)]
+
+        public string AlbumRecordUrl { get; set; }
+
         public virtual Genre Genre { get; set; }
 
         public virtual Artist Artist { get; set; }

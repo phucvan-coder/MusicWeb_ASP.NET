@@ -83,3 +83,7 @@ D:\Web\MusicStore\MusicStore\obj\Debug\MusicStore.csproj.CoreCompileInputs.cache
 D:\Web\MusicStore\MusicStore\obj\Debug\MusicStore.csproj.CopyComplete
 D:\Web\MusicStore\MusicStore\obj\Debug\MusicStore.dll
 D:\Web\MusicStore\MusicStore\obj\Debug\MusicStore.pdb
+F:\Lập trình web\Final Project\MusicStore\MusicStore\obj\Debug\MusicStore.csprojAssemblyReference.cache
+F:\Lập trình web\Final Project\MusicStore\MusicStore\obj\Debug\MusicStore.csproj.CoreCompileInputs.cache
+F:\Lập trình web\Final Project\MusicStore\MusicStore\obj\Debug\MusicStore.dll
+F:\Lập trình web\Final Project\MusicStore\MusicStore\obj\Debug\MusicStore.pdb
