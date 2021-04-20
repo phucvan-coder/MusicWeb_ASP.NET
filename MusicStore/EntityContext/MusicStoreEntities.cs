@@ -20,8 +20,7 @@ namespace MusicStore.EntityContext
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public MusicStoreEntities()
-            : base("musicPlayerDB")
+        public MusicStoreEntities():base("MusicStoreDB")
         {
 
         }
