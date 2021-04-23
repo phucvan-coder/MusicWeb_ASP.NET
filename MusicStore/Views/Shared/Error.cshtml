@@ -1,13 +1,9 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
-</head>
-<body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
-</body>
-</html>
+﻿@{ ViewBag.Title = "Error";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>Error</h2>
+<h2 style="font-size: 28px;">Some thing went wrong</h2>
+<p style="font-size: 16px;">
+    Please check you information again
+    <a href="/Home/AboutUs">Click <strong>Here</strong> and input your information again</a>
+</p>

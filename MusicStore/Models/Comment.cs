@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.Web.Http;
+using System.Web.Mvc;
 
-namespace MusicStore.Models
-{
+namespace MusicStore.Models {
     [Authorize]
-    public class Comment
-    {
+    public class Comment {
         [Key]
         public int CommentId { get; set; }
         [ScaffoldColumn(false)]
@@ -22,4 +21,6 @@ namespace MusicStore.Models
         public virtual Album Album { get; set; }
 
     }
+
+
 }

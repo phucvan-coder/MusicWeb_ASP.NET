@@ -4,12 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace MusicStore.Models
-{
-    public class Cart
-    {
+namespace MusicStore.Models {
+    /// <summary>
+    /// </summary>
+    public class Cart {
+        //主键注解
         [Key]
         public int RecordId { get; set; }
+        //一般是姓名 或者随机生成
         public string CartId { get; set; }
         public int AlbumId { get; set; }
         public int Count { get; set; }

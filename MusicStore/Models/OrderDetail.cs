@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
 
-namespace MusicStore.Models
-{
-    public class OrderDetail
-    {
+namespace MusicStore.Models {
+    /// <summary>
+    /// </summary>
+    public class OrderDetail {
         public int OrderDetailId { get; set; }
         public int OrderId { get; set; }
         public int AlbumId { get; set; }
@@ -14,6 +14,5 @@ namespace MusicStore.Models
         public decimal UnitPrice { get; set; }
         public virtual Album Album { get; set; }
         public virtual Order Order { get; set; }
-
     }
 }

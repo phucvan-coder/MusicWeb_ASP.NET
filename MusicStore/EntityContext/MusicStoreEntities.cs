@@ -1,15 +1,12 @@
 ﻿using MusicStore.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using System.Data.Entity;
 
-namespace MusicStore.EntityContext
-{
-    public class MusicStoreEntities : DbContext
-    {
-
+namespace MusicStore.EntityContext {
+    public class MusicStoreEntities : DbContext {
         public DbSet<Album> Albums { get; set; }
 
         public DbSet<Genre> Genres { get; set; }
@@ -19,10 +16,11 @@ namespace MusicStore.EntityContext
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
-        public DbSet<Comment> Comments { get; set; }
-        public MusicStoreEntities():base("MusicStoreDB")
-        {
 
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<FavoriteAlbum> FavoriteAlbums { get; set; }
+        public MusicStoreEntities()
+            : base("lab7") {
         }
     }
 }

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MusicStore.Models.FavoriteAlbum>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Favorite Albums</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Album.Title)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="/Store/Details/@item.AlbumId">
+                    @Html.DisplayFor(modelItem => item.Album.Title)
+                </a>
+
+            </td>
+
+            <td style=" color:green; border: 1px solid;padding:6px; " class="btn">
+                @Html.ActionLink("Unlike", "UnLike", "Favorite", new { id = item.AlbumId, returnUrl = HttpContext.Current.Request.Url.AbsolutePath }, null)
+            </td>
+        </tr>
+    }
+
+</table>
+<style>
+    #genre-list {
+        display: none;
+    }
+
+    #right-content {
+        display: none;
+    }
+    #mid-content {
+        margin:0 auto 0 auto;
+    }
+
+</style>

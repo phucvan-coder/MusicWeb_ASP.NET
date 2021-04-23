@@ -1,0 +1,43 @@
+﻿@model MusicStore.ViewModels.HomeViewModel
+
+
+@helper Truncate(string input, int length)
+{if (input.Length <= length)
+    {
+@input }
+else
+{
+@input.Substring(0, length)<text>...</text>}
+}
+<h1>Previous Viewed Albums</h1>
+@if (Model.ViewedAlbums.Count() > 0)
+{
+    <ul>
+        @foreach (var album in Model.ViewedAlbums)
+        {
+            <li>
+                <a href="@Url.Action("Details", "Store", new { id=album.AlbumId})">
+                    <img alt="@album.Title" src="@album.AlbumArtUrl" />
+                    <span>@Truncate(album.Title, 10) (@album.OrderDetails.Count)</span>
+                </a>
+            </li>
+        }
+    </ul> }
+else
+{
+    <p>No Viewed Albums Exist</p>}
+
+
+
+<h1>Top Sellers</h1>
+<ul>
+    @foreach (var album in Model.TopSellingAlbums)
+    {
+        <li>
+            <a href="@Url.Action("Details", "Store", new { id=album.AlbumId})">
+                <img alt="@album.Title" src="@album.AlbumArtUrl" />
+                <span>@Truncate(album.Title, 14) (@album.OrderDetails.Count)</span>
+            </a>
+        </li>
+    }
+</ul>

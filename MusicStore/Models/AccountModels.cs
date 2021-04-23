@@ -4,10 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Web.Security;
 
-namespace MusicStore.Models
-{
-    public class ChangePasswordModel
-    {
+namespace Mvc3ToolsUpdateWeb_Default.Models {
+
+    public class ChangePasswordModel {
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Current password")]
@@ -25,8 +24,7 @@ namespace MusicStore.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class LogOnModel
-    {
+    public class LogOnModel {
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
@@ -40,8 +38,7 @@ namespace MusicStore.Models
         public bool RememberMe { get; set; }
     }
 
-    public class RegisterModel
-    {
+    public class RegisterModel {
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
@@ -63,4 +60,3 @@ namespace MusicStore.Models
         public string ConfirmPassword { get; set; }
     }
 }
-
