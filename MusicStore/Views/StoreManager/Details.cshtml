@@ -1,7 +1,7 @@
 ﻿@model MusicStore.Models.Album
 
 @{ ViewBag.Title = "Details";
-                Layout = "~/Views/Shared/_Layout.cshtml"; }
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <h2>Details</h2>
 
@@ -46,7 +46,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AlbumArtUrl)
+            @Html.DisplayFor(model => model.AlbumArtUrl) <br />
+            <img loading="lazy" alt="@Model.Title" src="~/ImagesAlbum/@Model.AlbumArtUrl" width="150px" height="150px" />
         </dd>
 
         <dt>
@@ -59,7 +60,7 @@
             </audio>
         </dd>
 
-        
+
 
     </dl>
 </div>
@@ -67,3 +68,16 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+<style>
+    #genre-list {
+        display: none;
+    }
+
+    #right-content {
+        display: none;
+    }
+
+    #mid-content {
+        margin: 0 auto 0 auto;
+    }
+</style>

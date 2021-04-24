@@ -12,7 +12,7 @@ else
 }
 
 <h2>Music Store Home Page</h2>
-<h3><em>Fresh</em>off the grill</h3>
+<h3 style="margin-left: 20px;"><em>Fresh</em>off the grill</h3>
 <div class="row">
     @foreach (var album in Model.RandomAlbums)
     {
@@ -20,7 +20,7 @@ else
     <div class="thumbnail">
         <a href="@Url.Action("Details", "Store", new { id=album.AlbumId})">
             <a href="@Url.Action("Details", "Store", new { id=album.AlbumId})">
-                <img alt="@album.Title" src="~/ImagesAlbum/@album.AlbumArtUrl" width="140px;" height="140px;" />
+                <img alt="@album.Title" src="~/ImagesAlbum/@album.AlbumArtUrl" style="margin-left: 20px;" width="140px;" height="140px;" />
                 <p>@album.Title</p>
 
             </a>

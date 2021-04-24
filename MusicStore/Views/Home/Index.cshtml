@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "MyIndex";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 <section>
@@ -81,7 +81,7 @@
 <div id="plant" class="section  product">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 ">
+            <div class="col-md-12">
                 <div class="titlepage">
                     <h2><strong class="black"> Our</strong>  Products</h2>
                     <span>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected randomised words which don't look even slightly believable</span>
@@ -90,13 +90,13 @@
         </div>
     </div>
 </div>
-<div class="clothes_main section ">
+<div class="clothes_main section">
     <div class="container">
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="sport_product">
                     <figure><img src="~/images/Album1.jpg" alt="img" /></figure>
-                    <h3> $<strong class="price_text">50</strong></h3>
+                    <h3> $<strong class="price_text">8.99</strong></h3>
                     <h4>Men At Work Album</h4>
                     <br />
                     <form action="/Store/Details/1" method="post">
@@ -107,7 +107,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 ">
                 <div class="sport_product">
                     <figure><img src="~/images/Album2.jpg" alt="img" /></figure>
-                    <h3> $<strong class="price_text">50</strong></h3>
+                    <h3> $<strong class="price_text">8.99</strong></h3>
                     <h4>Let There Be Rock</h4>
                     <br />
                     <form action="/Store/Details/3" method="post">
@@ -118,7 +118,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 ">
                 <div class="sport_product">
                     <figure><img src="~/images/Album3.jpg" alt="img" /></figure>
-                    <h3> $<strong class="price_text">50</strong></h3>
+                    <h3> $<strong class="price_text">8.99</strong></h3>
                     <h4>Balls To The Walls</h4>
                     <br />
                     <form action="/Store/Details/4" method="post">
@@ -133,7 +133,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="sport_product">
                     <figure><img src="~/images/Album4.jpg" alt="img" /></figure>
-                    <h3> $<strong class="price_text">50</strong></h3>
+                    <h3> $<strong class="price_text">8.99</strong></h3>
                     <h4>Facelift</h4>
                     <br />
                     <form action="/Store/Details/8" method="post">
@@ -144,7 +144,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="sport_product">
                     <figure><img src="~/images/Album5.jpg" alt="img" /></figure>
-                    <h3> $<strong class="price_text">50</strong></h3>
+                    <h3> $<strong class="price_text">8.99</strong></h3>
                     <h4>Ring The Bell</h4>
                     <br />
                     <form action="/Store/Details/5" method="post">
@@ -155,7 +155,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="sport_product">
                     <figure><img src="~/images/Album6.jpg" alt="img" /></figure>
-                    <h3> $<strong class="price_text">50</strong></h3>
+                    <h3> $<strong class="price_text">8.99</strong></h3>
                     <h4>Jazz-Album</h4>
                     <br />
                     <form action="/Store/Browse?Genre=Jazz" method="post">
@@ -361,16 +361,16 @@
                 <div class="email_btn">
                     <form method="post" action="ContactUs">
                         <div class="form-group">
-                            <input style="color: black;" type="text" class="form-control form-control-sm" placeholder="Name" name="name">
+                            <input required style="color: black;" type="text" class="form-control form-control-sm" placeholder="Name" name="name">
                         </div>
                         <div class="form-group">
-                            <input style="color: black;" type="text" class="form-control form-control-sm" placeholder="Email" name="email">
+                            <input required style="color: black;" type="text" class="form-control form-control-sm" placeholder="Email" name="email">
                         </div>
                         <div class="form-group">
-                            <input style="color: black;" type="text" class="form-control form-control-sm" placeholder="Phone" name="subject">
+                            <input required style="color: black;" type="text" class="form-control form-control-sm" placeholder="Phone" name="subject">
                         </div>
                         <div class="form-group">
-                            <input style="color: black;" type="text" class="form-control form-control-sm" placeholder="Message" name="message">
+                            <input required style="color: black;" type="text" class="form-control form-control-sm" placeholder="Message" name="message">
                         </div>
                         <div class="submit_btn">
                             <button type="submit" class="btn btn-primary" style="background: #081b30;">Send</button>
@@ -388,9 +388,9 @@
                     </div>
                     <div class="col-md-8">
                         <div class="email_text">
-                            <form action="ContactByMail" method="post">
+                            <form action="/Home/ContactByMail" method="post">
                                 <div class="input-group mb-3">
-                                    <input style="border-bottom-left-radius: 20px !important; border-top-left-radius: 20px !important;" type="text" class="form-control" placeholder="Enter your email" name="subscribe">
+                                    <input required style="border-bottom-left-radius: 20px !important; border-top-left-radius: 20px !important;" type="text" class="form-control" placeholder="Enter your email" name="subscribe">
                                     <div class="input-group-append" style="margin-left: 20px;">
                                         <button type="submit" style="border-top-right-radius: 20px !important; border-bottom-right-radius: 20px !important; color: #fff; padding-bottom: 10px; padding-top: 10px;" class="btn btn-primary">Subscribe</button>
                                     </div>
@@ -442,7 +442,7 @@
     <div class="menu_main">
         <div class="menu_text">
             <ul>
-                <li> <a href="/Home/MainPage">Home</a> </li>
+                <li> <a href="/Home/Index">Home</a> </li>
                 <li> <a href="/Home/AboutUs">About</a> </li>
                 <li> <a href="/Home/Testmonial">Testmonial</a></li>
                 <li> <a href="/Home/Shop">Shop</a></li>

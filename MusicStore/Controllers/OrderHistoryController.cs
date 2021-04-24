@@ -19,7 +19,6 @@ namespace MusicStore.Controllers {
         }
 
         public ActionResult Details(int id) {
-            if (id == null) return Redirect("/Home/Index");
             var orderDetails = storeDB.OrderDetails.Where(od => od.OrderId == id);
             return View(orderDetails);
         }

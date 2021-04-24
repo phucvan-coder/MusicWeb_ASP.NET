@@ -423,6 +423,7 @@
     <Content Include="Views\Store\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AlbumFile\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

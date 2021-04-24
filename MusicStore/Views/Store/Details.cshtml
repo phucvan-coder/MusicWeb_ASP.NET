@@ -1,12 +1,12 @@
 ﻿@model MusicStore.ViewModels.AlBumViewModel
 
 @{ ViewBag.Title = "Details";
-                Layout = "~/Views/Shared/_Layout.cshtml"; }
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 
 <h2>Album Details</h2>
 <p>
-    <img loading="lazy" alt="@Model.Albums.Title" src="~/ImagesAlbum/@Model.Albums.AlbumArtUrl" />
+    <img loading="lazy" alt="@Model.Albums.Title" src="~/ImagesAlbum/@Model.Albums.AlbumArtUrl" width="200px" height="200px" />
 </p>
 <div id="album-details">
     <p>
@@ -20,6 +20,12 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     </p>
     <p>
+        <em>Audio:</em><br />
+        <audio controls>
+            <source src="~/MP3/@Model.Albums.mp3FileName" type="audio/ogg">
+        </audio>
+    </p>
+    <p>
         <em>Price:</em> @String.Format("{0:F}", Model.Albums.Price)
     </p>
     <p class="button">
@@ -29,16 +35,16 @@
 
         @if (ViewBag.IsLike != null)
         {
-            <a href="/Favorite/UnLike/@Model.Albums.AlbumId" style=" color:green; float: right; border: 1px solid;padding:10px;" class="btn">UnLike</a>
-        }
-        else { 
-            <a href="/Favorite/Like/@Model.Albums.AlbumId" style=" color:green; float: right; border: 1px solid;padding:10px; " class="btn">Like</a>
-        }
-        
+<a href="/Favorite/UnLike/@Model.Albums.AlbumId" style=" color:green; float: right; border: 1px solid;padding:10px;" class="btn">UnLike</a>
+}
+else
+{
+<a href="/Favorite/Like/@Model.Albums.AlbumId" style=" color:green; float: right; border: 1px solid;padding:10px; " class="btn">Like</a>}
 
-        
+
+
     </p>
-    <hr/>
+    <hr />
     <h2>
         Comments
     </h2>
@@ -47,7 +53,7 @@
 <div style="border-left: 6px solid; background-color: white">
     <h3>@item.Username:</h3>
     <p>@item.Description</p>
-    <hr/>
+    <hr />
 </div>}
 
     <div style="margin-top: 20%">

@@ -1,20 +1,29 @@
 ﻿@model IEnumerable<MusicStore.Models.Album>
 
 
-@helper Truncate(string input, int length) {if (input.Length <= length) {
-    @input }
-                    else {
-    @input.Substring(0, length)<text>...</text>}
+@helper Truncate(string input, int length)
+{if (input.Length <= length)
+    {
+@input }
+else
+{
+@input.Substring(0, length)<text>...</text>}
 }
 
 @{ ViewBag.Title = "Index";
-                Layout = "~/Views/Shared/_Layout.cshtml"; }
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@using (Html.BeginForm("Index", "StoreManager", FormMethod.Get))
+{
+<div>
+    <input type="text" name="searchString" class="form-control">
+    <input type="submit" value="Search" class="btn btn-default" />
+</div>}
 <table class="table">
     <tr>
         <th>
@@ -35,7 +44,8 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
 <tr>
     <td>
         @Truncate(item.Artist.Name, 25)
@@ -64,13 +74,29 @@
 </tr>}
 
 </table>
+<ul>
+    @for (int i = 1; i <= ViewBag.CountPage; i++)
+    {
+        if (i == Convert.ToInt32(ViewBag.CurrentPage))
+        {
+<li style="color:red; float:left; margin:10px; border:1px solid; padding: 10px;" class="btn btn-light">@Html.ActionLink(i.ToString(), "Index", "StoreManager", new { page = i, searchString = ViewBag.SearchString }, null)</li>
+}
+else
+{
+<li style="float:left; margin:10px; border:1px solid; padding: 10px;" class="btn btn-light">@Html.ActionLink(i.ToString(), "Index", "StoreManager", new { page = i, searchString = ViewBag.SearchString }, null)</li>
+}
+}
+
+</ul>
 <style>
     #genre-list {
         display: none;
     }
+
     #right-content {
         display: none;
     }
+
     #mid-content {
         margin: 0 auto 0 auto;
     }

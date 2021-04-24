@@ -16,8 +16,7 @@ namespace MusicStore.Controllers {
         MusicStoreEntities storeDB = new MusicStoreEntities();
         //
         // GET: /Home/
-        public ActionResult Index()
-        {
+        public ActionResult Index() {
             return View();
         }
         public ActionResult Shop() {
@@ -78,10 +77,10 @@ namespace MusicStore.Controllers {
             return View();
         }
 
-        public ActionResult ContactUs() {
+        public ActionResult ErrorPage() {
             return View();
         }
-        public ActionResult ErrorPage() {
+        public ActionResult ContactUs() {
             return View();
         }
         [HttpPost]
@@ -90,14 +89,72 @@ namespace MusicStore.Controllers {
                 return View("ErrorPage");
             }
             else if (name != null && email != null && subject != null && message != null) {
+                if (name.Length < 2 || subject.Length < 2 || message.Length < 2 || email.Length < 10) {
+                    return View("ErrorPage");
+                }
+                else {
+                    try {
+                        string subtile = "";
+                        string receiver = "longdnk18@uef.edu.vn";
+                        if (ModelState.IsValid) {
+                            var senderEmail = new MailAddress("kimlong101020@gmail.com", "Guestt");
+                            var receiverEmail = new MailAddress(receiver, "Receiver");
+                            var password = "KimLong10102030";
+                            subtile += (name + " " + email + " " + subject);
+                            var sub = subtile;
+                            var body = message;
+                            var smtp = new SmtpClient
+                            {
+                                Host = "smtp.gmail.com",
+                                Port = 587,
+                                EnableSsl = true,
+                                DeliveryMethod = SmtpDeliveryMethod.Network,
+                                UseDefaultCredentials = false,
+                                Credentials = new NetworkCredential(senderEmail.Address, password)
+                            };
+                            using (var mess = new MailMessage(senderEmail, receiverEmail)
+                            {
+                                Subject = sub,
+                                Body = body
+                            }) {
+                                smtp.Send(mess);
+                            }
+                            return View("Index");
+                        }
+                    }
+                    catch (Exception) {
+                        ViewBag.Error = "Some Error";
+                        return View("ErrorPage");
+                    }
+                }
+            }
+            return View("Index");
+        }
+        public ActionResult ContactByMail() {
+            return View("Index");
+        }
+        [HttpPost]
+        public ActionResult ContactByMail(string subscribe) {
+            if (string.IsNullOrEmpty(subscribe)) {
+                return View("ErrorPage");
+            }
+            else if (subscribe.Length <10) {
+                return View("ErrorPage");
+            }
+            else {
                 try {
+                    string message = "";
+                    string fi = "Hello i'm";
+                    string se = "please add me";
+                    string str = "to V.I.P membership";
                     string subtile = "";
                     string receiver = "longdnk18@uef.edu.vn";
                     if (ModelState.IsValid) {
+                        message += (fi + " " + subscribe + " " + se + " " + str);
                         var senderEmail = new MailAddress("kimlong101020@gmail.com", "Guestt");
                         var receiverEmail = new MailAddress(receiver, "Receiver");
                         var password = "KimLong10102030";
-                        subtile += (name + " " + email + " " + subject);
+                        subtile += str;
                         var sub = subtile;
                         var body = message;
                         var smtp = new SmtpClient
@@ -116,7 +173,7 @@ namespace MusicStore.Controllers {
                         }) {
                             smtp.Send(mess);
                         }
-                        return View("MainPage");
+                        return View("Index");
                     }
                 }
                 catch (Exception) {
@@ -124,52 +181,7 @@ namespace MusicStore.Controllers {
                     return View("ErrorPage");
                 }
             }
-            return View();
-        }
-        public ActionResult ContactByMail() {
-            return View("MainPage");
-        }
-        [HttpPost]
-        public ActionResult ContactByMail(string subscribe) {
-            try {
-                string message = "";
-                string fi = "Hello i'm";
-                string se = "please add me";
-                string str = "to V.I.P membership";
-                string subtile = "";
-                string receiver = "longdnk18@uef.edu.vn";
-                if (ModelState.IsValid) {
-                    message += (fi + " " + subscribe + " " + se + " " + str);
-                    var senderEmail = new MailAddress("kimlong101020@gmail.com", "Guestt");
-                    var receiverEmail = new MailAddress(receiver, "Receiver");
-                    var password = "KimLong10102030";
-                    subtile += str;
-                    var sub = subtile;
-                    var body = message;
-                    var smtp = new SmtpClient
-                    {
-                        Host = "smtp.gmail.com",
-                        Port = 587,
-                        EnableSsl = true,
-                        DeliveryMethod = SmtpDeliveryMethod.Network,
-                        UseDefaultCredentials = false,
-                        Credentials = new NetworkCredential(senderEmail.Address, password)
-                    };
-                    using (var mess = new MailMessage(senderEmail, receiverEmail)
-                    {
-                        Subject = sub,
-                        Body = body
-                    }) {
-                        smtp.Send(mess);
-                    }
-                    return View("MainPage");
-                }
-            }
-            catch (Exception) {
-                ViewBag.Error = "Some Error";
-                return View("ErrorPage");
-            }
-            return View();
+            return View("Index");
         }
     }
 }

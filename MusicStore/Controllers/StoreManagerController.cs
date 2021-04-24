@@ -15,9 +15,33 @@ namespace MusicStore.Controllers {
     public class StoreManagerController : Controller {
         private MusicStoreEntities db = new MusicStoreEntities();
 
-        public ActionResult Index() {
+        public ActionResult Index(string searchString, string page)
+        {
+            
             var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);
-            return View(albums.ToList());
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                albums = albums.Where(a => a.Title.Contains(searchString));
+                ViewBag.SearchString = searchString;
+            }
+            if (string.IsNullOrEmpty(page))
+            {
+                page = "1";
+            }
+            int curPage = Convert.ToInt32(page);
+            int amountForEach = 15;
+            int cntPage = albums.Count() / amountForEach;
+            if (albums.Count() % amountForEach != 0) {
+                cntPage += 1;
+            }
+            ViewBag.CountPage = cntPage;
+            ViewBag.CurrentPage = page;
+            //System.Diagnostics.Debug.WriteLine(page);
+            //System.Diagnostics.Debug.WriteLine(curPage);
+            //System.Diagnostics.Debug.WriteLine(Convert.ToInt32(curPage - 1));
+            var albumPage = albums.ToList().ToArray().Skip((curPage - 1) * amountForEach).Take(amountForEach);
+
+            return View(albumPage.ToList());
         }
 
         public ActionResult Details(int? id) {

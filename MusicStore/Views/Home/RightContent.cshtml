@@ -17,7 +17,7 @@ else
         {
             <li>
                 <a href="@Url.Action("Details", "Store", new { id=album.AlbumId})">
-                    <img alt="@album.Title" src="@album.AlbumArtUrl" />
+                    <img alt="@album.Title" src="~/ImagesAlbum/@album.AlbumArtUrl" width="80px" height="80px"/>
                     <span>@Truncate(album.Title, 10) (@album.OrderDetails.Count)</span>
                 </a>
             </li>
@@ -35,7 +35,7 @@ else
     {
         <li>
             <a href="@Url.Action("Details", "Store", new { id=album.AlbumId})">
-                <img alt="@album.Title" src="@album.AlbumArtUrl" />
+                <img alt="@album.Title" src="~/ImagesAlbum/@album.AlbumArtUrl"  width="80px" height="80px"/>
                 <span>@Truncate(album.Title, 14) (@album.OrderDetails.Count)</span>
             </a>
         </li>

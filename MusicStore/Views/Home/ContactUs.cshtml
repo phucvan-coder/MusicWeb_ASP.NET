@@ -36,16 +36,16 @@
                 <div class="email_btn">
                     <form method="post" action="ContactUs">
                         <div class="form-group">
-                            <input style="color: black;" type="text" class="form-control form-control-sm" placeholder="Name" name="name">
+                            <input required style="color: black;" type="text" class="form-control form-control-sm" placeholder="Name" name="name">
                         </div>
                         <div class="form-group">
-                            <input style="color: black;" type="text" class="form-control form-control-sm" placeholder="Email" name="email">
+                            <input required style="color: black;" type="text" class="form-control form-control-sm" placeholder="Email" name="email">
                         </div>
                         <div class="form-group">
-                            <input style="color: black;" type="text" class="form-control form-control-sm" placeholder="Phone" name="subject">
+                            <input required style="color: black;" type="text" class="form-control form-control-sm" placeholder="Phone" name="subject">
                         </div>
                         <div class="form-group">
-                            <input style="color: black;" type="text" class="form-control form-control-sm" placeholder="Message" name="message">
+                            <input required style="color: black;" type="text" class="form-control form-control-sm" placeholder="Message" name="message">
                         </div>
                         <div class="submit_btn">
                             <button type="submit" class="btn btn-primary" style="background: #081b30;">Send</button>
@@ -63,9 +63,9 @@
                     </div>
                     <div class="col-md-8">
                         <div class="email_text">
-                            <form action="ContactByMail" method="post">
+                            <form action="/Home/ContactByMail" method="post">
                                 <div class="input-group mb-3">
-                                    <input style="border-bottom-left-radius: 20px !important; border-top-left-radius: 20px !important;" type="text" class="form-control" placeholder="Enter your email" name="subscribe">
+                                    <input required style="border-bottom-left-radius: 20px !important; border-top-left-radius: 20px !important;" type="text" class="form-control" placeholder="Enter your email" name="subscribe">
                                     <div class="input-group-append" style="margin-left: 20px;">
                                         <button type="submit" style="border-top-right-radius: 20px !important; border-bottom-right-radius: 20px !important; color: #fff; padding-bottom: 10px; padding-top: 10px;" class="btn btn-primary">Subscribe</button>
                                     </div>
@@ -117,10 +117,10 @@
     <div class="menu_main">
         <div class="menu_text">
             <ul>
-                <li> <a href="/Home/MainPage">Home</a> </li>
+                <li> <a href="/Home/Index">Home</a> </li>
                 <li> <a href="/Home/AboutUs">About</a> </li>
                 <li><a href="/Home/Testmonial">Testmonial</a></li>
-                <li><a href="/Store/MyIndex">Shop</a></li>
+                <li><a href="/Home/Shop">Shop</a></li>
                 <li><a href="/Home/ContactUs">Contact Us</a></li>
                 <li class="last"><a href="#"><img src="~/images/search_icon.png" alt="icon" /></a></li>
             </ul>
